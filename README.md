@@ -1,7 +1,7 @@
-barcampsti
+barcampsti 2013
 ==========
 
-Algunos ejemplos de las charlas impartidas en el BarCamp STI
+Ejemplos básicos de maven con motivo de mi charla "Primeros Pasos con Maven" impartida en el BarCamp STI 2013
 
 
 Pagina Oficial:
