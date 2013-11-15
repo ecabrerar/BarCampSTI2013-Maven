@@ -42,6 +42,7 @@ Parte II
 ---------------
 Modificar el archivo pom.xml y agregar lo siguiente:
 <pre>
+<code>
 <plugins>
       <plugin>
           <groupId>org.mortbay.jetty</groupId>
@@ -57,6 +58,7 @@ Modificar el archivo pom.xml y agregar lo siguiente:
            </configuration>
    </plugin>
 </plugins>
+</code>
 </pre>
 Parte III
 ------------------
