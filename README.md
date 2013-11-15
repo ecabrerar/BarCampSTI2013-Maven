@@ -13,13 +13,16 @@ Ejercicio I
 Desde la línea de comando crear un proyecto maven simple usando el artefacto "maven-archetype-quickstart"
 * Ejecutar comando : mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart
 * Llenar información requerida para el proyecto maven
- ...Ejemplo:
-   ..* groupId:    org.ecabrerar.barcampsti
-   ..* artifactId: simple-project (nombre del proyecto)
-   ..* version:    dejar version por defecto
-   ..* package:     org.ecabrerar.barcampsti.examples
 
+ 
+Ejemplo
+```text
+    groupId:    org.ecabrerar.barcampsti
+    artifactId: simple-project (nombre del proyecto)
+    version:    dejar version por defecto
+    package:     org.ecabrerar.barcampsti.examples
 
+```
 
 
 Ejercicio II
@@ -28,21 +31,22 @@ Ejercicio II
 Parte I
 --------------
 
-... archetype:generate -DarchetypeArtifactId=maven-archetype-webapp
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp
 
 Desde la línea de comando crear un proyecto maven web simple usando el artefacto "maven-archetype-webapp" 
 * Ejecutar comando : mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp
 * Llenar información requerida para el proyecto maven
+
  Ejemplo:
-
-    ..*groupId: org.ecabrerar.barcampsti 
-    ..*artifactId: webapp-simple-project (nombre del proyecto) 
-    ..*version: dejar version por defecto 
-    ..*package: org.ecabrerar.barcampsti.examples
-
+```text
+    groupId: org.ecabrerar.barcampsti 
+    artifactId: webapp-simple-project (nombre del proyecto) 
+    version: dejar version por defecto 
+    package: org.ecabrerar.barcampsti.examples
+```
 Parte II
 ---------------
-...Modificar el archivo pom.xml y agregar lo siguiente:
+Modificar el archivo pom.xml y agregar lo siguiente:
 ```Xml
 
 <plugins>
