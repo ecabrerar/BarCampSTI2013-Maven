@@ -7,8 +7,8 @@ http://barcamp.org.do
 
 Ejemplos básicos de maven con motivo de mi charla `Primeros Pasos con Maven` impartida en el BarCamp STI 2013
 
-Ejercicio I
-=================
+Ejercicio I: Crear un proyecto maven simple
+===========================================
 
 Desde la línea de comando crear un proyecto maven simple usando el artefacto `maven-archetype-quickstart`
 * Ejecutar comando : mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart
@@ -27,8 +27,25 @@ Ejemplo
 
 
 
-Ejercicio II
-==========================================
+Ejercicio II : 
+==============
+Personalización de un proyecto maven
+---------------
+
+
+
+Ejercicio III : 
+===============
+Escribir pruebas unitarias (Unit Tests) y ejecutar con Maven
+--------------
+
+
+
+
+Ejercicio IV : 
+==============
+Crear una aplicación web simple
+-------------------------------
 
 Parte I
 --------------
@@ -77,3 +94,8 @@ Lanzar aplicacion
 <pre>
 mvn jetty:run
 </pre>
+
+Ejercicio V : 
+=============
+Crear un proyecto multi-módulo
+-----------------------------------------
