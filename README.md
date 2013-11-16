@@ -43,7 +43,7 @@ mvn archetype:generate -DgroupId=org.ecabrerar.barcampsti \
 
 Modificar el archivo pom.xml y agregar configuración del compilador
 
-<code>
+
 
 <build>
         <plugins>
@@ -59,10 +59,10 @@ Modificar el archivo pom.xml y agregar configuración del compilador
         </plugins>
     </build>
 
-</code>
+
 
 Modificar el archivo pom.xml y personalizar información del proyecto
-<pre>
+
 <licenses>
         <license>
             <name>Apache 2</name>
@@ -72,14 +72,13 @@ Modificar el archivo pom.xml y personalizar información del proyecto
         </license>
     </licenses>
 
-</pre>
-<pre>
+
+
 <organization>
         <name>Barcamp STI</name>
         <url>http://www.barcamp.org.do</url>
     </organization>
-</pre>
-<pre>
+
 <developers>
         <developer>
             <id>ecabrerar</id>
@@ -94,16 +93,16 @@ Modificar el archivo pom.xml y personalizar información del proyecto
             <timezone>-4</timezone>
         </developer>
     </developers>
-</pre>
+
 
 Modificar el archivo pom.xml y agregar información sobre el control de versiones
-<pre>
+
 <scm>
 	<connection>scm:git:git@github.com:ecabrerar/barcampsti.git</connection>
 	<url>scm:git:git@github.com:ecabrerar/barcampsti.git</url>
 	<developerConnection>scm:git:git@github.com:ecabrerar/barcampsti.git</developerConnection>
   </scm>
-</pre>
+
 
 Modificar el archivo pom.xml y agregar información sobre la distribucion
 <pre>
@@ -120,7 +119,7 @@ Modificar el archivo pom.xml y agregar información sobre la distribucion
             <url>https://repository-ecabrerar.forge.cloudbees.com/snapshot/</url>
         </snapshotRepository>
     </distributionManagement>    
-</pre>
+
 
 
 Ejercicio III : 
