@@ -105,7 +105,7 @@ Modificar el archivo pom.xml y agregar información sobre el control de versione
 
 
 Modificar el archivo pom.xml y agregar información sobre la distribucion
-<pre>
+
 <distributionManagement>
         
         <repository>
