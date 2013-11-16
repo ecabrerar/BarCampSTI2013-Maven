@@ -44,7 +44,7 @@ mvn archetype:generate -DgroupId=org.ecabrerar.barcampsti \
 Modificar el archivo pom.xml y agregar configuración del compilador
 
 
-
+<pre>
 <build>
         <plugins>
             <plugin>
