@@ -43,7 +43,8 @@ mvn archetype:generate -DgroupId=org.ecabrerar.barcampsti \
 
 Modificar el archivo pom.xml y agregar configuración del compilador
 
-<pre>
+<code>
+
 <build>
         <plugins>
             <plugin>
@@ -58,7 +59,7 @@ Modificar el archivo pom.xml y agregar configuración del compilador
         </plugins>
     </build>
 
-</pre>
+</code>
 
 Modificar el archivo pom.xml y personalizar información del proyecto
 <pre>
