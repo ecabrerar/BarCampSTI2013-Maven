@@ -7,8 +7,31 @@ http://barcamp.org.do
 
 Ejemplos básicos de maven con motivo de mi charla `Primeros Pasos con Maven` impartida en el BarCamp STI 2013
 
+Instalar Maven
+-------------------------------------------
+* Descargar y descomprimir
+  http://maven.apache.org/download.html
+   > Asegúrese de que la variable de entorno JAVA_HOME está en apuntando al directorio del JDK
+ * Añadir a la variable de entorno PATH
+    Ejemplo:
+   > Linux
+     export MAVEN_HOME=~/apache-maven-3.0.1
+	 export PATH=$PATH:$MAVEN_HOME/bin
+   > Windows
+    set M2_HOME=:\Program Files\apache-maven-3.0.1
+    set PATH=%PATH%;%M2_HOME%\bin
+
+Comprobar instalación
+--------------------------
+Desde la línea de comandos
+> Escribir mvn -version y debe obtener como resultado la versión instalada y la ruta de la variable de entorno MAVEN_HOME
+
+
+
+
+
 Ejercicio I: Crear un proyecto maven simple
-===========================================
+-------------------------------------------
 
 Desde la línea de comando crear un proyecto maven simple usando el artefacto `maven-archetype-quickstart`
 * Ejecutar comando : mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart
@@ -27,24 +50,101 @@ Ejemplo
 
 
 
-Ejercicio II : 
-==============
-Personalización de un proyecto maven
----------------
+Ejercicio II : Personalizar un proyecto maven
+-----------------------------------------------
+
+Desde la línea de comando crear un proyecto maven simple usando el siguiente comando
+
+mvn archetype:generate -DgroupId=org.ecabrerar.barcampsti \
+      -DartifactId=simple-custom-project \
+      -Dpackage=org.ecabrerar.barcampsti.examples \
+      -DarchetypeArtifactId=maven-archetype-quickstart \
+      -DinteractiveMode=false \
+      -Dversion=1.0
+
+Modificar el archivo pom.xml y agregar configuración del compilador
+
+<pre>
+<build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</pre>
+
+Modificar el archivo pom.xml y personalizar información del proyecto
+<pre>
+<licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+</pre>
+<pre>
+<organization>
+        <name>Barcamp STI</name>
+        <url>http://www.barcamp.org.do</url>
+    </organization>
+</pre>
+<pre>
+<developers>
+        <developer>
+            <id>ecabrerar</id>
+            <name>Eudris Cabrera</name>
+            <email>eudris@gmail.com</email>
+            <url>https://github.com/ecabrerar</url>
+            <organization>Barcamp STI</organization>
+            <organizationUrl>http://www.barcamp.org.do</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>-4</timezone>
+        </developer>
+    </developers>
+</pre>
+
+Modificar el archivo pom.xml y agregar información sobre el control de versiones
+<pre>
+<scm>
+	<connection>scm:git:git@github.com:ecabrerar/barcampsti.git</connection>
+	<url>scm:git:git@github.com:ecabrerar/barcampsti.git</url>
+	<developerConnection>scm:git:git@github.com:ecabrerar/barcampsti.git</developerConnection>
+  </scm>
+</pre>
+
+Modificar el archivo pom.xml y agregar información sobre la distribucion
+<pre>
+<distributionManagement>
+        
+        <repository>
+            <id>releases</id>
+            <name>Eudris Cabrera Release Repository</name>
+            <url>https://repository-ecabrerar.forge.cloudbees.com/release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Eudris Cabrera Snapshots Repository</name>
+            <url>https://repository-ecabrerar.forge.cloudbees.com/snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>    
+</pre>
 
 
 
-Ejercicio III : 
-===============
-Escribir pruebas unitarias (Unit Tests) y ejecutar con Maven
---------------
-
-
-
-
-Ejercicio IV : 
-==============
-Crear una aplicación web simple
+Ejercicio III : Crear una aplicación web simple
 -------------------------------
 
 Parte I
@@ -95,7 +195,7 @@ Lanzar aplicacion
 mvn jetty:run
 </pre>
 
-Ejercicio V : 
+Ejercicio IV : 
 =============
 Crear un proyecto multi-módulo
 -----------------------------------------
