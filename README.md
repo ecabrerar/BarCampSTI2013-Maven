@@ -50,8 +50,15 @@ Ejemplo
 
 
 
+<<<<<<< HEAD
 Ejercicio II : Personalizar un proyecto maven
 -----------------------------------------------
+=======
+Ejercicio II : 
+==============
+Personalizar de un proyecto maven
+---------------
+>>>>>>> 14e0d3b783b90e7f30f53febea5c91767ae2d334
 
 Desde la línea de comando crear un proyecto maven simple usando el siguiente comando
 
@@ -81,6 +88,7 @@ Modificar el archivo pom.xml y agregar configuración del compilador
 
 </pre>
 
+<<<<<<< HEAD
 Modificar el archivo pom.xml y personalizar información del proyecto
 <pre>
 <licenses>
@@ -94,12 +102,47 @@ Modificar el archivo pom.xml y personalizar información del proyecto
 
 </pre>
 <pre>
+=======
+<build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+Modificar el archivo pom.xml y personalizar información del proyecto
+
+<licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+
+
+>>>>>>> 14e0d3b783b90e7f30f53febea5c91767ae2d334
 <organization>
         <name>Barcamp STI</name>
         <url>http://www.barcamp.org.do</url>
     </organization>
+<<<<<<< HEAD
 </pre>
 <pre>
+=======
+
+>>>>>>> 14e0d3b783b90e7f30f53febea5c91767ae2d334
 <developers>
         <developer>
             <id>ecabrerar</id>
@@ -114,19 +157,33 @@ Modificar el archivo pom.xml y personalizar información del proyecto
             <timezone>-4</timezone>
         </developer>
     </developers>
+<<<<<<< HEAD
 </pre>
 
 Modificar el archivo pom.xml y agregar información sobre el control de versiones
 <pre>
+=======
+
+
+Modificar el archivo pom.xml y agregar información sobre el control de versiones
+
+>>>>>>> 14e0d3b783b90e7f30f53febea5c91767ae2d334
 <scm>
 	<connection>scm:git:git@github.com:ecabrerar/barcampsti.git</connection>
 	<url>scm:git:git@github.com:ecabrerar/barcampsti.git</url>
 	<developerConnection>scm:git:git@github.com:ecabrerar/barcampsti.git</developerConnection>
   </scm>
+<<<<<<< HEAD
 </pre>
 
 Modificar el archivo pom.xml y agregar información sobre la distribucion
 <pre>
+=======
+
+
+Modificar el archivo pom.xml y agregar información sobre la distribucion
+
+>>>>>>> 14e0d3b783b90e7f30f53febea5c91767ae2d334
 <distributionManagement>
         
         <repository>
@@ -140,11 +197,20 @@ Modificar el archivo pom.xml y agregar información sobre la distribucion
             <url>https://repository-ecabrerar.forge.cloudbees.com/snapshot/</url>
         </snapshotRepository>
     </distributionManagement>    
+<<<<<<< HEAD
 </pre>
 
 
 
 Ejercicio III : Crear una aplicación web simple
+=======
+
+
+
+Ejercicio III : 
+==============
+Crear una aplicación web simple
+>>>>>>> 14e0d3b783b90e7f30f53febea5c91767ae2d334
 -------------------------------
 
 Parte I
