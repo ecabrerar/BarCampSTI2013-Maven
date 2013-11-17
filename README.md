@@ -1,5 +1,5 @@
-barcampsti 2013
-==========
+##BarCampSTI 2013
+
 
 Pagina Oficial:
 http://barcamp.org.do
@@ -7,34 +7,50 @@ http://barcamp.org.do
 
 Ejemplos básicos de maven con motivo de mi charla `Primeros Pasos con Maven` impartida en el BarCamp STI 2013
 
-Instalar Maven
--------------------------------------------
-* Descargar y descomprimir
-  http://maven.apache.org/download.html
-   > Asegúrese de que la variable de entorno JAVA_HOME está en apuntando al directorio del JDK
- * Añadir a la variable de entorno PATH
-    Ejemplo:
-   > Linux
+####Requisitos:
+Para mejor entendiemiento es recomendable conocimientos básicos de Java
+
+####Requerimientos
+* Java 1.7+
+
+
+###Instalar Maven
+
+* Descargar y descomprimir instalador desde http://maven.apache.org/download.html
+* Asegúrese de que la variable de entorno JAVA_HOME está en apuntando al directorio del JDK
+* Añadir a la variable de entorno PATH
+  
+Ejemplo:
+   
+####Linux
+```bash
      export MAVEN_HOME=~/apache-maven-3.0.1
 	 export PATH=$PATH:$MAVEN_HOME/bin
-   > Windows
+```
+####Windows
+```bash
     set M2_HOME=:\Program Files\apache-maven-3.0.1
     set PATH=%PATH%;%M2_HOME%\bin
+```
 
-Comprobar instalación
---------------------------
+###Comprobar instalación
+
 Desde la línea de comandos
-> Escribir mvn -version y debe obtener como resultado la versión instalada y la ruta de la variable de entorno MAVEN_HOME
+Escribir `mvn -version` y debe obtener como resultado la versión instalada y la ruta de la variable de entorno `MAVEN_HOME`
 
 
 
+###Ejercicio I: Crear un proyecto maven simple
 
-
-Ejercicio I: Crear un proyecto maven simple
--------------------------------------------
 
 Desde la línea de comando crear un proyecto maven simple usando el artefacto `maven-archetype-quickstart`
-* Ejecutar comando : mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart
+
+Ejecutar comando :
+ 
+```bash
+     mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart
+```
+
 * Llenar información requerida para el proyecto maven
 
  
@@ -49,29 +65,22 @@ Ejemplo
 
 
 
-
-<<<<<<< HEAD
-Ejercicio II : Personalizar un proyecto maven
------------------------------------------------
-=======
-Ejercicio II : 
-==============
-Personalizar de un proyecto maven
----------------
->>>>>>> 14e0d3b783b90e7f30f53febea5c91767ae2d334
-
+###Ejercicio II : Personalizar un proyecto maven
+####Parte I:
 Desde la línea de comando crear un proyecto maven simple usando el siguiente comando
-
+```bash
 mvn archetype:generate -DgroupId=org.ecabrerar.barcampsti \
       -DartifactId=simple-custom-project \
       -Dpackage=org.ecabrerar.barcampsti.examples \
       -DarchetypeArtifactId=maven-archetype-quickstart \
       -DinteractiveMode=false \
       -Dversion=1.0
+```
+####Parte II:
 
 Modificar el archivo pom.xml y agregar configuración del compilador
 
-<pre>
+```xml
 <build>
         <plugins>
             <plugin>
@@ -85,12 +94,12 @@ Modificar el archivo pom.xml y agregar configuración del compilador
             </plugin>
         </plugins>
     </build>
+```
 
-</pre>
 
-<<<<<<< HEAD
-Modificar el archivo pom.xml y personalizar información del proyecto
-<pre>
+Personalizar información del proyecto
+
+```xml
 <licenses>
         <license>
             <name>Apache 2</name>
@@ -99,50 +108,19 @@ Modificar el archivo pom.xml y personalizar información del proyecto
             <comments>A business-friendly OSS license</comments>
         </license>
     </licenses>
-
-</pre>
-<pre>
-=======
-<build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+```
 
 
-
-Modificar el archivo pom.xml y personalizar información del proyecto
-
-<licenses>
-        <license>
-            <name>Apache 2</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-            <comments>A business-friendly OSS license</comments>
-        </license>
-    </licenses>
-
-
-
->>>>>>> 14e0d3b783b90e7f30f53febea5c91767ae2d334
+Agregar información de la institución
+```xml
 <organization>
         <name>Barcamp STI</name>
         <url>http://www.barcamp.org.do</url>
     </organization>
-<<<<<<< HEAD
-</pre>
-<pre>
-=======
+```
 
->>>>>>> 14e0d3b783b90e7f30f53febea5c91767ae2d334
+Agregar información del equipo de trabajo
+```xml
 <developers>
         <developer>
             <id>ecabrerar</id>
@@ -157,33 +135,23 @@ Modificar el archivo pom.xml y personalizar información del proyecto
             <timezone>-4</timezone>
         </developer>
     </developers>
-<<<<<<< HEAD
-</pre>
-
-Modificar el archivo pom.xml y agregar información sobre el control de versiones
-<pre>
-=======
+```
 
 
-Modificar el archivo pom.xml y agregar información sobre el control de versiones
+Agregar información sobre el control de versiones
 
->>>>>>> 14e0d3b783b90e7f30f53febea5c91767ae2d334
+```xml
 <scm>
 	<connection>scm:git:git@github.com:ecabrerar/barcampsti.git</connection>
 	<url>scm:git:git@github.com:ecabrerar/barcampsti.git</url>
 	<developerConnection>scm:git:git@github.com:ecabrerar/barcampsti.git</developerConnection>
   </scm>
-<<<<<<< HEAD
-</pre>
-
-Modificar el archivo pom.xml y agregar información sobre la distribucion
-<pre>
-=======
+```
 
 
 Modificar el archivo pom.xml y agregar información sobre la distribucion
 
->>>>>>> 14e0d3b783b90e7f30f53febea5c91767ae2d334
+```xml
 <distributionManagement>
         
         <repository>
@@ -197,28 +165,31 @@ Modificar el archivo pom.xml y agregar información sobre la distribucion
             <url>https://repository-ecabrerar.forge.cloudbees.com/snapshot/</url>
         </snapshotRepository>
     </distributionManagement>    
-<<<<<<< HEAD
-</pre>
+
+```
+
+####Parte III:
+Desde la línea de comandos ejecutar `mvn site` en el directorio donde se encuentra el archivo `pom.xml` para generar
+un sitio `html` con toda la información de nuestro proyecto.
+
+Ir al directorio `target/site` para comprobar que se haya generado la documentación y abrir  el archivo `index.hml` con nuestro navegador 
 
 
 
-Ejercicio III : Crear una aplicación web simple
-=======
+###Ejercicio III : Crear una aplicación web simple
 
 
+####Parte I
 
-Ejercicio III : 
-==============
-Crear una aplicación web simple
->>>>>>> 14e0d3b783b90e7f30f53febea5c91767ae2d334
--------------------------------
-
-Parte I
---------------
 
 Desde la línea de comando crear un proyecto maven web simple usando el artefacto `maven-archetype-webapp`
-* Ejecutar comando : mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp
-* Llenar información requerida para el proyecto maven
+
+Ejecutar comando : 
+```bash
+    mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp
+```
+
+Llenar información requerida para el proyecto maven
 
  Ejemplo:
 
@@ -230,9 +201,9 @@ Desde la línea de comando crear un proyecto maven web simple usando el artefact
     </pre>
 
  
-Parte II
----------------
-Modificar el archivo `pom.xml` y agregar lo siguiente:
+####Parte II
+
+Modificar el archivo `pom.xml` y agregar el plugin para el servidor jetty (http://www.eclipse.org/jetty)
 ```xml
  <plugins>
       <plugin>
@@ -250,8 +221,10 @@ Modificar el archivo `pom.xml` y agregar lo siguiente:
    </plugin>
 </plugins>
 ```
-Parte III
-------------------
+
+
+####Parte III
+
 Compilar y empaquetar los archivos compilados.
 <pre>
 mvn clean compile package
@@ -261,7 +234,8 @@ Lanzar aplicacion
 mvn jetty:run
 </pre>
 
-Ejercicio IV : 
-=============
-Crear un proyecto multi-módulo
------------------------------------------
+###Ejercicio IV : Crear un proyecto multi-módulo
+
+#### Author
+
+* [Eudris Cabrera](https://github.com/ecabrerar)
