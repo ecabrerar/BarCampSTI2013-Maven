@@ -24,12 +24,12 @@ Ejemplo:
    
 ####Linux
 ```bash
-     export MAVEN_HOME=~/apache-maven-3.0.1
+     export MAVEN_HOME=~/apache-maven-3.1.0
 	 export PATH=$PATH:$MAVEN_HOME/bin
 ```
 ####Windows
 ```bash
-    set M2_HOME=:\Program Files\apache-maven-3.0.1
+    set M2_HOME=:\Program Files\apache-maven-3.1.0
     set PATH=%PATH%;%M2_HOME%\bin
 ```
 
@@ -235,6 +235,8 @@ mvn jetty:run
 </pre>
 
 ###Ejercicio IV : Crear un proyecto multi-módulo
+
+`Aun trabajo en la documentación` ....
 
 #### Author
 
