@@ -142,9 +142,9 @@ Agregar información sobre el control de versiones
 
 ```xml
 <scm>
-	<connection>scm:git:git@github.com:ecabrerar/barcampsti.git</connection>
-	<url>scm:git:git@github.com:ecabrerar/barcampsti.git</url>
-	<developerConnection>scm:git:git@github.com:ecabrerar/barcampsti.git</developerConnection>
+	<connection>scm:git:git@github.com:BarcampSTI/BarCampSTI2013-Maven.git</connection>
+	<url>scm:git:git@github.com:BarcampSTI/BarCampSTI2013-Maven.git</url>
+	<developerConnection>scm:git:git@github.com:BarcampSTI/BarCampSTI2013-Maven.git</developerConnection>
   </scm>
 ```
 
@@ -168,7 +168,36 @@ Modificar el archivo pom.xml y agregar información sobre la distribucion
 
 ```
 
-####Parte III:
+####Parte III: Correr un ejemplo simple java usando Maven
+Al crear nuestro proyecto maven se crean un paquete por defecto para el código fuente (debajo de `src/main/java`) y otro paquete para las pruebas unitarias( debajo de `src/test/java`).
+Por lo regular el paquete creado en `src/main/java` y en `src/test/java` se llaman iguales, en nuestro caso `org.ecabrerar.barcampsti.examples`.
+Dentro de cada paquete se crea una clase java simple `App.java` y `AppTest.java` en el paquete para las pruebas unitarias.
+
+```java
+
+package org.ecabrerar.barcampsti.examples;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+    }
+}
+```
+Para correo este ejemplo simple ejecutamos los siguientes comandos en la lína de comandos.
+
+```bash
+mvn install
+mvn exec:java -Dexec.mainClass=org.ecabrerar.barcampsti.examples.App
+```
+
+####Parte IV: Generar documentación del proyecto en formato html
+
 Desde la línea de comandos ejecutar `mvn site` en el directorio donde se encuentra el archivo `pom.xml` para generar
 un sitio `html` con toda la información de nuestro proyecto.
 
