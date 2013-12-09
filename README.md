@@ -189,7 +189,7 @@ public class App
     }
 }
 ```
-Para correo este ejemplo simple ejecutamos los siguientes comandos en la lína de comandos.
+Para correr este ejemplo simple ejecutamos los siguientes comandos en la lína de comandos.
 
 ```bash
 mvn install
