@@ -169,7 +169,7 @@ Modificar el archivo pom.xml y agregar información sobre la distribucion
 ```
 
 ####Parte III: Correr un ejemplo simple java usando Maven
-Al crear nuestro proyecto maven se crean un paquete por defecto para el código fuente (debajo de `src/main/java`) y otro paquete para las pruebas unitarias( debajo de `src/test/java`).
+Al crear nuestro proyecto maven se crea un paquete por defecto para el código fuente (debajo de `src/main/java`) y otro paquete para las pruebas unitarias( debajo de `src/test/java`).
 Por lo regular el paquete creado en `src/main/java` y en `src/test/java` se llaman iguales, en nuestro caso `org.ecabrerar.barcampsti.examples`.
 Dentro de cada paquete se crea una clase java simple `App.java` y `AppTest.java` en el paquete para las pruebas unitarias.
 
@@ -265,7 +265,32 @@ mvn jetty:run
 
 ###Ejercicio IV : Crear un proyecto multi-módulo
 
-`Aun trabajo en la documentación` ....
+Un proyecto de varios módulos (multi-modulo) se define por un POM padre haciendo referencia 
+a uno o más submódulos(proyectos descendientesdel padre).
+
+Para crear nuestro proyecto padre ejecutamos el siguiente comando:
+
+```bash
+mvn archetype:generate -DarchetypeGroupId=org.codehaus.mojo.archetypes -DarchetypeArtifactId=pom-root -D  archetypeVersion=RELEASE
+```
+
+Luego dentro proyecto padre podemos ejecutar los comandos para crear nuestros módulos.
+El comando ejecutado dependerá del tipo de proyecto que queremos crear.
+Por ejemplo: 
+
+crear un proyecto web
+```bash
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp
+```
+
+una librería, un proyecto web service, etc
+
+```bash
+mvn archetype:generate  -DarchetypeArtifactId=maven-archetype-quickstart 
+```
+
+Para nuestra demostración vamos a crear un proyecto multi-módulo que combina los ejercicios II y III.
+El ejercicio II, un proyecto Java simple y el ejercicio III, un proyecto web simple.
 
 #### Author
 
