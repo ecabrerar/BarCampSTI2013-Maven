@@ -274,16 +274,16 @@ Para crear nuestro proyecto padre ejecutamos el siguiente comando:
 mvn archetype:generate -DarchetypeGroupId=org.codehaus.mojo.archetypes -DarchetypeArtifactId=pom-root -D  archetypeVersion=RELEASE
 ```
 
-Luego dentro proyecto padre podemos ejecutar los comandos para crear nuestros módulos.
+Dentro del proyecto padre, podemos ejecutar los comandos para crear los sub-módulos.
 El comando ejecutado dependerá del tipo de proyecto que queremos crear.
 Por ejemplo: 
 
-crear un proyecto web
+Crear un proyecto web
 ```bash
 mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp
 ```
 
-una librería, un proyecto web service, etc
+Una librería, un proyecto web service, etc
 
 ```bash
 mvn archetype:generate  -DarchetypeArtifactId=maven-archetype-quickstart 
@@ -291,6 +291,134 @@ mvn archetype:generate  -DarchetypeArtifactId=maven-archetype-quickstart
 
 Para nuestra demostración vamos a crear un proyecto multi-módulo que combina los ejercicios II y III.
 El ejercicio II, un proyecto Java simple y el ejercicio III, un proyecto web simple.
+
+####Paso I: Crear Proyecto Padre (POM padre)
+
+Ejecutar en la línea de comando:
+
+```bash
+mvn archetype:generate -DarchetypeGroupId=org.codehaus.mojo.archetypes -DarchetypeArtifactId=pom-root -D  archetypeVersion=RELEASE
+```
+Información general del proyecto
+ <pre>
+      groupId:    org.ecabrerar.barcampsti
+    artifactId: multi-module-project (nombre del proyecto)
+    version:    dejar version por defecto
+    package:     dejar paquete por defecto
+</pre>
+
+POM padre
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.ecabrerar.barcampsti</groupId>
+  <artifactId>multi-module-project</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>multi-module-project</name>
+</project>
+```
+
+Al igual que los proyectos maven anterior el POM padre posee la misma estructura de groupId, artifactId, version, etc..
+La diferencia con otros tipos de proyectos está en la coordenada `packaging`, en lugar de tener un formato de archivo (jar, war,ear, etc.) como vimos anteriormente,
+el valor para este tipo de proyecto es `pom`.
+
+####Paso II: Definir sub-modulos.
+
+Anteriormente creamos los ejercicios II y III, en esta oportunidad no vamos a volver a crearlo, vamos a copiar ambos proyectos dentro del proyecto multi-modulo.
+Si deseas crearlo desde cero, recuerde ejecutar los comandos para crear los sub-módulos dentro del proyecto padre.
+
+Para el ejercicio II
+```bash
+mvn archetype:generate  -DarchetypeArtifactId=maven-archetype-quickstart 
+```
+
+Para el Ejercicio III
+```bash
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp
+```
+
+Estructura del proyecto multi-modulo
+<pre>
+multi-module-project
+  simple-custom-project
+  webapp-simple-project
+  pom.xml
+</pre>
+  
+####Paso III: Agregar dependencias
+Modificar el archivo `pom.xml` del proyecto padre y agregar los dos sub-módulos
+```xml
+<modules>
+        <module>simple-custom-project</module>
+        <module> webapp-simple-project</module>
+</modules>
+```
+
+Modificar el archivo `pom.xml` de cada sub-módulo para:
+Remover la siguiente coordenada
+<pre>
+ <groupId>org.ecabrerar.barcampsti</groupId>
+</pre>
+
+Luego agregar la referencia del proyecto padre
+```xml
+<parent>
+  <groupId>org.ecabrerar.barcampsti</groupId>
+  <artifactId>multi-module-project</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</parent>
+```
+
+Luego de hacer las modificaciones anteriores podemos compilar el proyecto para comprobar que las modificaciones se realizaron de la forma correcta.
+```bash
+mvn clean install
+```
+
+En su resultado final debe aparecer una salida similar a la siguiente
+```bash
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] multi-module-project .............................. SUCCESS [5.300s]
+[INFO] simple-custom-project ............................. SUCCESS [25.091s]
+[INFO] webapp-simple-project Maven Webapp ................ SUCCESS [8.364s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 39.732s
+[INFO] Finished at: Tue Dec 10 18:35:06 EST 2013
+[INFO] Final Memory: 16M/183M
+[INFO] ------------------------------------------------------------------------
+```
+
+Ahora podemos correr cada módulo de forma independiente.
+
+Desde el directorio raíz ir al proyecto correspondiente al ejercicio II
+```bash
+cd simple-custom-project
+mvn install
+mvn exec:java -Dexec.mainClass=org.ecabrerar.barcampsti.examples.App
+```
+Desde el directorio raíz ir al proyecto correspondiente al ejercicio III
+
+```bash
+cd webapp-simple-project
+mvn clean compile package
+mvn jetty:run
+```
+Hasta este punto tenemos un proyecto multi-módulo simple funcional, pero todavía nos falta re-estructurar los poms para eliminar las duplicaciones de dependencias.
+
+
+####Paso IV: Re-estructurar POMs.
+
+* Mover dependencias al POM padre. 
+* Eliminar las duplicadas.
+* Mover otras informaciones relevantes(tipo de licencia, control de versiones, etc) al pom padre.
+
+
 
 #### Author
 
