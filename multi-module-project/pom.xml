@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.ecabrerar.barcampsti</groupId>
+  <artifactId>multi-module-project</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>multi-module-project</name>
+  
+  <modules>
+        <module>simple-custom-project</module>
+        <module> webapp-simple-project</module>
+</modules>
+
+  <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+    
+    <organization>
+        <name>Barcamp STI</name>
+        <url>http://www.barcamp.org.do</url>
+    </organization>
+    
+    <developers>
+        <developer>
+            <id>ecabrerar</id>
+            <name>Eudris Cabrera</name>
+            <email>eudris@gmail.com</email>
+            <url>https://github.com/ecabrerar</url>
+            <organization>Barcamp STI</organization>
+            <organizationUrl>http://www.barcamp.org.do</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>-4</timezone>
+        </developer>
+    </developers>
+    
+<scm>
+    <connection>scm:git:git@github.com:BarcampSTI/BarCampSTI2013-Maven.git</connection>
+    <url>scm:git:git@github.com:BarcampSTI/BarCampSTI2013-Maven.git</url>
+    <developerConnection>scm:git:git@github.com:BarcampSTI/BarCampSTI2013-Maven.git</developerConnection>
+ </scm>
+  
+<dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+ <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Eudris Cabrera Release Repository</name>
+            <url>https://repository-ecabrerar.forge.cloudbees.com/release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Eudris Cabrera Snapshots Repository</name>
+            <url>https://repository-ecabrerar.forge.cloudbees.com/snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>  
+
+</project>
