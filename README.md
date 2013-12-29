@@ -321,14 +321,14 @@ POM padre
 </project>
 ```
 
-Al igual que los proyectos maven anterior el POM padre posee la misma estructura de groupId, artifactId, version, etc..
+Al igual que los proyectos maven anteriores, el POM padre posee la misma estructura de groupId, artifactId, version, etc..
 La diferencia con otros tipos de proyectos está en la coordenada `packaging`, en lugar de tener un formato de archivo (jar, war,ear, etc.) como vimos anteriormente,
 el valor para este tipo de proyecto es `pom`.
 
 ####Paso II: Definir sub-modulos.
 
-Anteriormente creamos los ejercicios II y III, en esta oportunidad no vamos a volver a crearlo, vamos a copiar ambos proyectos dentro del proyecto multi-modulo.
-Si deseas crearlo desde cero, recuerde ejecutar los comandos para crear los sub-módulos dentro del proyecto padre.
+Anteriormente creamos los ejercicios II y III, en esta oportunidad no vamos a volver a crearlos, vamos a copiar ambos proyectos dentro del proyecto multi-modulo.
+Si deseas crearlos desde cero, recuerde ejecutar los comandos para crear los sub-módulos dentro del proyecto padre.
 
 Para el ejercicio II
 ```bash
@@ -409,7 +409,9 @@ cd webapp-simple-project
 mvn clean compile package
 mvn jetty:run
 ```
-Hasta este punto tenemos un proyecto multi-módulo simple funcional, pero todavía nos falta re-estructurar los poms para eliminar las duplicaciones de dependencias.
+Hasta este punto, tenemos un proyecto multi-módulo simple con pocas funcionalidades, la idea principal es mostrar las características de Maven para proyectos de este tipo. 
+
+Todavía nos falta re-estructurar los poms para eliminar las duplicaciones de dependencias.
 
 
 ####Paso IV: Re-estructurar POMs.
@@ -423,3 +425,4 @@ Hasta este punto tenemos un proyecto multi-módulo simple funcional, pero todav�
 #### Author
 
 * [Eudris Cabrera](https://github.com/ecabrerar)
+* [![endorse](https://api.coderwall.com/ecabrerar/endorsecount.png)](https://coderwall.com/ecabrerar)
