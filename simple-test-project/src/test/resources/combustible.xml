@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+    <channel>
+        <title>MIC - Combustibles RSS</title>
+        <link>http://www.mic.gob.do</link>
+        <item><title>Precios de Combustibles: 28 de Diciembre al 3 de Enero </title>
+            <guid isPermaLink="false">http://www.mic.gob.do/hidrocarburos/precios-de-combustibles/2013/12/28-de-diciembre-al-3-de-enero-de-2013.aspx</guid>
+            <pubDate>2013-12-27T00:00:00</pubDate>
+            <media:credit>Dirección de Hidrocarburos, MIC</media:credit>
+
+  <gas95>247.40</gas95>
+  <gas89>232.80</gas89>
+  <gasoilp>219.70</gasoilp>
+  <gasoilr>213.00</gasoilr>
+  <kerosene>194.20</kerosene>
+  <glp>108.50</glp>
+  <gnv>30.50</gnv>
+  <link>http://www.mic.gob.do/hidrocarburos/precios-de-combustibles/2013/12/28-de-diciembre-al-3-de-enero-de-2013.aspx</link>
+  </item>  
+  </channel>
+  </rss>
+ 
