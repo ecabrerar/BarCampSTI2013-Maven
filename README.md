@@ -421,8 +421,81 @@ Todavía nos falta re-estructurar los poms para eliminar las duplicaciones de de
 * Mover otras informaciones relevantes(tipo de licencia, control de versiones, etc) al pom padre.
 
 
+###Ejercicio V : Correr pruebas unitarias con Maven
+
+El proyecto `simple-test-project` es un ejemplo básico de jUnit.
+La idea es poder leer las actualizaciones del portal del ministerio de industrica y comercio sobre los combustibles.
+Para esto leemos los feeds del rss http://www.seic.gov.do/rss/combustibles.aspx y los parseamos usando la librería jdom.
+
+Se crearon varias pruebas usando jUnit para validar que el archivo se está parseando correctamente.
+
+```java
+package org.ecabrerar.barcampsti.combustible.mic;
+
+import java.io.InputStream;
+
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+
+/**
+ * Unit test for simple App.
+ */
+public class AppTest extends TestCase
+{
+	
+    /**
+     * Create the test case
+     *
+     * @param testName name of the test case
+     */
+    public AppTest( String testName )
+    {
+        super( testName );
+    }
+
+    /**
+     * @return the suite of tests being tested
+     */
+    public static Test suite()
+    {
+        return new TestSuite( AppTest.class );
+    }
+
+    /**
+     * Rigourous Test :-)
+     * @throws Exception 
+     */
+    public void testApp() throws Exception
+    {
+    	InputStream nyData =
+                getClass().getClassLoader().getResourceAsStream("combustible.xml");
+            Combustible comb = new CombustibleParser().parse( nyData );
+            
+            assertEquals( "247.40", comb.getGasolinaPremium() );
+            assertEquals( "232.80", comb.getGasolinaRegular() );
+            assertEquals( "219.70", comb.getGasoilPremium() );
+            assertEquals( "213.00", comb.getGasoilRegular() );
+            assertEquals( "194.20", comb.getKerosene() );
+            assertEquals( "108.50", comb.getGlp() );
+            assertEquals( "30.50", comb.getGnv() );
+    }
+}
+```
+
+Para realizar la prueba ejecutamos los siguientes comandos:
+
+```bash
+cd simple-test-project
+mvn test
+```
+
 
 #### Author
 
 * [Eudris Cabrera](https://github.com/ecabrerar)
 * [![endorse](https://api.coderwall.com/ecabrerar/endorsecount.png)](https://coderwall.com/ecabrerar)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ecabrerar/barcampsti2013-maven/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
