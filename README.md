@@ -558,5 +558,7 @@ mvn test
 * [![endorse](https://api.coderwall.com/ecabrerar/endorsecount.png)](https://coderwall.com/ecabrerar)
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ecabrerar/barcampsti2013-maven/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/BarcampSTI/barcampsti2013-maven/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 
