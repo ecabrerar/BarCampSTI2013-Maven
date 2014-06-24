@@ -5,7 +5,7 @@ Pagina Oficial:
 http://barcamp.org.do
 
 
-Ejemplos básicos de maven con motivo de mi charla `Primeros Pasos con Maven` impartida en el BarCamp STI 2013
+Ejemplos básicos de maven con motivo de mi charla [Primeros Pasos con Maven](http://www.slideshare.net/eudris/primeros-pasos-con-maven) impartida en el BarCamp STI 2013
 
 ####Requisitos:
 Para mejor entendiemiento es recomendable conocimientos básicos de Java
