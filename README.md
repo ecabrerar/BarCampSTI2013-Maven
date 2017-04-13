@@ -1,4 +1,4 @@
-##BarCampSTI 2013
+## BarCampSTI 2013
 
 
 Pagina Oficial:
@@ -7,14 +7,14 @@ http://barcamp.org.do
 
 Ejemplos básicos de maven con motivo de mi charla [Primeros Pasos con Maven](http://www.slideshare.net/eudris/primeros-pasos-con-maven) impartida en el BarCamp STI 2013
 
-####Requisitos:
+#### Requisitos:
 Para mejor entendiemiento es recomendable conocimientos básicos de Java
 
-####Requerimientos
+#### Requerimientos
 * Java 1.7+
 
 
-###Instalar Maven
+### Instalar Maven
 
 * Descargar y descomprimir instalador desde http://maven.apache.org/download.html
 * Asegúrese de que la variable de entorno JAVA_HOME está en apuntando al directorio del JDK
@@ -22,25 +22,25 @@ Para mejor entendiemiento es recomendable conocimientos básicos de Java
   
 Ejemplo:
    
-####Linux
+#### Linux
 ```bash
      export MAVEN_HOME=~/apache-maven-3.1.0
 	 export PATH=$PATH:$MAVEN_HOME/bin
 ```
-####Windows
+#### Windows
 ```bash
     set M2_HOME=:\Program Files\apache-maven-3.1.0
     set PATH=%PATH%;%M2_HOME%\bin
 ```
 
-###Comprobar instalación
+### Comprobar instalación
 
 Desde la línea de comandos
 Escribir `mvn -version` y debe obtener como resultado la versión instalada y la ruta de la variable de entorno `MAVEN_HOME`
 
 
 
-###Ejercicio I: Crear un proyecto maven simple
+### Ejercicio I: Crear un proyecto maven simple
 
 
 Desde la línea de comando crear un proyecto maven simple usando el artefacto `maven-archetype-quickstart`
@@ -65,8 +65,8 @@ Ejemplo
 
 
 
-###Ejercicio II : Personalizar un proyecto maven
-####Parte I:
+### Ejercicio II : Personalizar un proyecto maven
+#### Parte I:
 Desde la línea de comando crear un proyecto maven simple usando el siguiente comando
 ```bash
 mvn archetype:generate -DgroupId=org.ecabrerar.barcampsti \
@@ -76,7 +76,7 @@ mvn archetype:generate -DgroupId=org.ecabrerar.barcampsti \
       -DinteractiveMode=false \
       -Dversion=1.0
 ```
-####Parte II:
+#### Parte II:
 
 Modificar el archivo pom.xml y agregar configuración del compilador
 
@@ -168,7 +168,7 @@ Modificar el archivo pom.xml y agregar información sobre la distribucion
 
 ```
 
-####Parte III: Correr un ejemplo simple java usando Maven
+#### Parte III: Correr un ejemplo simple java usando Maven
 Al crear nuestro proyecto maven se crea un paquete por defecto para el código fuente (debajo de `src/main/java`) y otro paquete para las pruebas unitarias( debajo de `src/test/java`).
 Por lo regular el paquete creado en `src/main/java` y en `src/test/java` se llaman iguales, en nuestro caso `org.ecabrerar.barcampsti.examples`.
 Dentro de cada paquete se crea una clase java simple `App.java` y `AppTest.java` en el paquete para las pruebas unitarias.
@@ -196,7 +196,7 @@ mvn install
 mvn exec:java -Dexec.mainClass=org.ecabrerar.barcampsti.examples.App
 ```
 
-####Parte IV: Generar documentación del proyecto en formato html
+#### Parte IV: Generar documentación del proyecto en formato html
 
 Desde la línea de comandos ejecutar `mvn site` en el directorio donde se encuentra el archivo `pom.xml` para generar
 un sitio `html` con toda la información de nuestro proyecto.
@@ -205,10 +205,10 @@ Ir al directorio `target/site` para comprobar que se haya generado la documentac
 
 
 
-###Ejercicio III : Crear una aplicación web simple
+### Ejercicio III : Crear una aplicación web simple
 
 
-####Parte I
+#### Parte I
 
 
 Desde la línea de comando crear un proyecto maven web simple usando el artefacto `maven-archetype-webapp`
@@ -230,7 +230,7 @@ Llenar información requerida para el proyecto maven
     </pre>
 
  
-####Parte II
+#### Parte II
 
 Modificar el archivo `pom.xml` y agregar el plugin para el servidor jetty (http://www.eclipse.org/jetty)
 ```xml
@@ -252,7 +252,7 @@ Modificar el archivo `pom.xml` y agregar el plugin para el servidor jetty (http:
 ```
 
 
-####Parte III
+#### Parte III
 
 Compilar y empaquetar los archivos compilados.
 <pre>
@@ -263,7 +263,7 @@ Lanzar aplicacion
 mvn jetty:run
 </pre>
 
-###Ejercicio IV : Crear un proyecto multi-módulo
+### Ejercicio IV : Crear un proyecto multi-módulo
 
 Un proyecto de varios módulos (multi-modulo) se define por un POM padre haciendo referencia 
 a uno o más submódulos(proyectos descendientesdel padre).
@@ -292,7 +292,7 @@ mvn archetype:generate  -DarchetypeArtifactId=maven-archetype-quickstart
 Para nuestra demostración vamos a crear un proyecto multi-módulo que combina los ejercicios II y III.
 El ejercicio II, un proyecto Java simple y el ejercicio III, un proyecto web simple.
 
-####Paso I: Crear Proyecto Padre (POM padre)
+#### Paso I: Crear Proyecto Padre (POM padre)
 
 Ejecutar en la línea de comando:
 
@@ -325,7 +325,7 @@ Al igual que los proyectos maven anteriores, el POM padre posee la misma estruct
 La diferencia con otros tipos de proyectos está en la coordenada `packaging`, en lugar de tener un formato de archivo (jar, war,ear, etc.) como vimos anteriormente,
 el valor para este tipo de proyecto es `pom`.
 
-####Paso II: Definir sub-modulos.
+#### Paso II: Definir sub-modulos.
 
 Anteriormente creamos los ejercicios II y III, en esta oportunidad no vamos a volver a crearlos, vamos a copiar ambos proyectos dentro del proyecto multi-modulo.
 Si deseas crearlos desde cero, recuerde ejecutar los comandos para crear los sub-módulos dentro del proyecto padre.
@@ -348,7 +348,7 @@ multi-module-project
   pom.xml
 </pre>
   
-####Paso III: Agregar dependencias
+#### Paso III: Agregar dependencias
 Modificar el archivo `pom.xml` del proyecto padre y agregar los dos sub-módulos
 ```xml
 <modules>
@@ -421,7 +421,7 @@ Todavía nos falta re-estructurar los poms para eliminar las duplicaciones de de
 * Mover otras informaciones relevantes(tipo de licencia, control de versiones, etc) al pom padre.
 
 
-###Ejercicio V : Correr pruebas unitarias con Maven
+### Ejercicio V : Correr pruebas unitarias con Maven
 
 El proyecto `simple-test-project` es un ejemplo básico de jUnit.
 La idea es poder leer las actualizaciones del portal del ministerio de industrica y comercio sobre los combustibles.
