@@ -414,7 +414,7 @@ Hasta este punto, tenemos un proyecto multi-módulo simple con pocas funcionalid
 Todavía nos falta re-estructurar los poms para eliminar las duplicaciones de dependencias.
 
 
-####Paso IV: Re-estructurar POMs.
+#### Paso IV: Re-estructurar POMs.
 
 * Mover dependencias al POM padre. 
 * Eliminar las duplicadas.
